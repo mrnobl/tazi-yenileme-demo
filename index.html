@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-lang="en">
+<html lang="tr" data-lang="tr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/theme.css">
 <link rel="stylesheet" href="assets/site.css">
-<script>try{var t=localStorage.getItem("tazi-theme");if(t)document.documentElement.setAttribute("data-theme",t);var l=localStorage.getItem("tazi-lang");if(l==="tr"){document.documentElement.setAttribute("data-lang","tr");document.documentElement.lang="tr"}}catch(e){}</script>
+<script>try{var t=localStorage.getItem("tazi-theme");if(t)document.documentElement.setAttribute("data-theme",t);var l=new URLSearchParams(location.search).get("lang")||localStorage.getItem("tazi-lang");if(l==="en"){document.documentElement.setAttribute("data-lang","en");document.documentElement.lang="en"}}catch(e){}</script>
 </head>
 <body>
 <header class="nav"><div class="wrap">

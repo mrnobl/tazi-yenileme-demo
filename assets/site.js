@@ -11,7 +11,7 @@
     moon: '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>',
   };
   const isDark = () => root.getAttribute("data-theme") === "dark" || (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme: dark)").matches);
-  const lang = () => root.getAttribute("data-lang") || "en";
+  const lang = () => root.getAttribute("data-lang") || "tr";
   let stats = null;
   const charts = [];
 
