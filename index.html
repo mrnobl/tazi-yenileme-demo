@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tazı Yenileme Merkezi</title>
+<meta name="description" content="A field operations app for a bike and scooter sharing fleet: maintenance, regional repair centre, shifts, vehicle tracking. Case study and live read-only demo with real anonymised data.">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/theme.css">
+<link rel="stylesheet" href="assets/site.css">
+<script>try{var t=localStorage.getItem("tazi-theme");if(t)document.documentElement.setAttribute("data-theme",t);var l=localStorage.getItem("tazi-lang");if(l==="tr"){document.documentElement.setAttribute("data-lang","tr");document.documentElement.lang="tr"}}catch(e){}</script>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="#top"><img src="assets/icon.svg" alt=""><span>Tazı Yenileme Merkezi</span></a>
+  <span class="sp"></span>
+  <button class="tbtn" id="langBtn" aria-label="Language"><span lang="en">TR</span><span lang="tr">EN</span></button>
+  <button class="tbtn" id="themeBtn" aria-label="Theme"></button>
+</div></header>
+
+<main id="top">
+<div class="wrap hero">
+  <span class="eyebrow" lang="en">Case study · Android app + Google Sheets back end</span>
+  <span class="eyebrow" lang="tr">Proje · Android uygulama + Google Sheets arka uç</span>
+  <h1 lang="en">The field app that ran a bike-sharing fleet's maintenance</h1>
+  <h1 lang="tr">Bir paylaşımlı bisiklet filosunun bakımını yürüten saha uygulaması</h1>
+  <p class="byline">Nevzat Köseoğlu · <a href="https://www.linkedin.com/in/nevzat-k%C3%B6seo%C4%9Flu-41519ab0" rel="noopener" target="_blank">LinkedIn</a></p>
+  <p class="lead" lang="en">As Samsun Provincial Manager at Tazı, a bike and e-scooter sharing company, I designed and built an Android app that replaced paper forms and WhatsApp messages for maintenance, repairs, shifts and vehicle tracking. It became the regional repair centre's system for eight provinces.</p>
+  <p class="lead" lang="tr">Paylaşımlı bisiklet ve e-scooter şirketi Tazı'da Samsun İl Yöneticisi olarak bakım, onarım, vardiya ve araç takibini kâğıttan ve WhatsApp'tan alan bir Android uygulaması tasarlayıp geliştirdim. Uygulama sekiz ile hizmet veren bölge onarım merkezinin sistemi oldu.</p>
+  <div class="cta">
+    <a class="btn" href="app.html"><span lang="en">Open the demo</span><span lang="tr">Demoyu aç</span></a>
+    <a class="btn ghost" href="#results"><span lang="en">See the results</span><span lang="tr">Sonuçlar</span></a>
+  </div>
+  <div class="meta" lang="en">The demo runs in your browser with the app's real operating data, anonymised. Read-only.</div>
+  <div class="meta" lang="tr">Demo tarayıcıda, uygulamanın gerçek ve anonimleştirilmiş verisiyle açılır. Salt okunur.</div>
+</div>
+
+<section id="problem"><div class="wrap">
+  <h2 lang="en">The problem</h2><h2 lang="tr">Sorun</h2>
+  <p class="intro" lang="en">A shared fleet lives or dies by how fast broken vehicles get back on the street. When I started in May 2025, that work ran on paper and chat groups.</p>
+  <p class="intro" lang="tr">Paylaşımlı bir filoda her şey arızalı aracın ne kadar hızlı sahaya döndüğüne bağlı. Mayıs 2025'te başladığımda bu iş kâğıt ve mesaj gruplarıyla yürüyordu.</p>
+  <div class="cols">
+    <div class="box"><h3 lang="en">No maintenance history</h3><h3 lang="tr">Bakım geçmişi yok</h3><p lang="en">Which bike had which service, at what mileage, with which part, was not recorded anywhere searchable.</p><p lang="tr">Hangi bisiklete hangi kilometrede, hangi parçayla bakım yapıldığı aranabilir bir yerde tutulmuyordu.</p></div>
+    <div class="box"><h3 lang="en">Repairs lost in transit</h3><h3 lang="tr">Yolda kaybolan onarımlar</h3><p lang="en">Scooters and control cards shipped between provinces had no status: received, in repair, sent back?</p><p lang="tr">İller arasında gidip gelen scooter ve kontrol kartlarının durumu belli değildi: teslim alındı mı, onarımda mı, geri gönderildi mi?</p></div>
+    <div class="box"><h3 lang="en">Shifts on trust</h3><h3 lang="tr">Güvene dayalı vardiya</h3><p lang="en">A 24/7 field team with no record of late starts, vehicle condition at handover, or which stations were actually visited.</p><p lang="tr">7/24 çalışan saha ekibinde geç başlama, devirde aracın durumu ya da hangi istasyonlara gerçekten gidildiği kayıtlı değildi.</p></div>
+  </div>
+</div></section>
+
+<section id="solution"><div class="wrap">
+  <h2 lang="en">The solution</h2><h2 lang="tr">Çözüm</h2>
+  <p class="intro" lang="en">A native Android app for the field team, with Google Sheets and Apps Script as a zero-cost back end that management could read directly. 26 sheet modules sit behind it; I built it with AI-assisted development and shipped updates continuously while the team used it.</p>
+  <p class="intro" lang="tr">Saha ekibi için yerel bir Android uygulaması; arka uçta yönetimin doğrudan okuyabildiği, maliyetsiz Google Sheets ve Apps Script. Arkasında 26 tablo modülü var; yapay zekâ destekli geliştirmeyle yazdım ve ekip kullanırken sürekli güncelledim.</p>
+  <div class="cols">
+    <div class="box"><h3 lang="en">Maintenance and depot</h3><h3 lang="tr">Bakım ve depo</h3><ul lang="en"><li>Depot intake/exit, faults, part changes, missing parts</li><li>Tiered periodic maintenance with overdue list</li><li>QR scanning, inventory counts, stock per province</li></ul><ul lang="tr"><li>Depo giriş-çıkış, arıza, parça değişimi, eksik parça</li><li>Kademeli periyodik bakım ve bakımı gelenler listesi</li><li>QR okuma, envanter sayımı, il bazında stok</li></ul></div>
+    <div class="box"><h3 lang="en">Regional repair centre</h3><h3 lang="tr">Bölge onarım merkezi</h3><ul lang="en"><li>Service intake and return per province</li><li>Control-card repair with stages and repeat detection</li><li>Repair reports for each sending province</li></ul><ul lang="tr"><li>İl bazında servis girişi ve iadesi</li><li>Aşamalı kontrol kartı onarımı, tekrarlayan arıza tespiti</li><li>Gönderen her il için onarım raporu</li></ul></div>
+    <div class="box"><h3 lang="en">Shifts and vehicle</h3><h3 lang="tr">Vardiya ve araç</h3><ul lang="en"><li>Shift roster, start alarms, delay report</li><li>Vehicle handover with five photos</li><li>GPS tracking, driving behaviour, station geofences, automatic alerts</li></ul><ul lang="tr"><li>Vardiya çizelgesi, başlangıç alarmı, gecikme raporu</li><li>Beş fotoğraflı araç teslimi</li><li>GPS takip, sürüş davranışı, istasyon geofence'leri, otomatik uyarılar</li></ul></div>
+  </div>
+</div></section>
+
+<section id="role"><div class="wrap">
+  <h2 lang="en">My role</h2><h2 lang="tr">Benim rolüm</h2>
+  <div class="cols">
+    <div class="box"><p lang="en">I ran the Samsun operation and its five-person 24/7 field team, and I was also the app's product owner, designer and developer: I found the problems on the street, specified the screens, built them, trained the team, and read the data every day to decide what to fix next.</p><p lang="tr">Samsun operasyonunu ve beş kişilik 7/24 saha ekibini yönettim; aynı zamanda uygulamanın ürün sahibi, tasarımcısı ve geliştiricisiydim: sorunları sahada buldum, ekranları tanımladım, geliştirdim, ekibi eğittim, neyi düzelteceğime her gün veriye bakarak karar verdim.</p></div>
+    <div class="box"><p lang="en">The app went beyond Samsun: other provinces used it to send scooters and control cards to the regional repair centre and to track their own records. In the demo I appear as <b>Personel 1</b>.</p><p lang="tr">Uygulama Samsun'la sınırlı kalmadı: diğer iller scooter ve kontrol kartlarını bölge onarım merkezine göndermek ve kendi kayıtlarını izlemek için kullandı. Demoda ben <b>Personel 1</b> olarak görünüyorum.</p></div>
+  </div>
+</div></section>
+
+<section id="results"><div class="wrap">
+  <h2 lang="en">Measured results</h2><h2 lang="tr">Ölçülmüş sonuçlar</h2>
+  <p class="intro" lang="en">Every number below is recomputed from the app's own records by the build script in this repository.</p>
+  <p class="intro" lang="tr">Aşağıdaki her sayı, bu depodaki betikle uygulamanın kendi kayıtlarından yeniden hesaplandı.</p>
+
+  <div class="group-title" lang="en">Fleet</div><div class="group-title" lang="tr">Filo</div>
+  <div class="metrics">
+    <div class="metric hl"><div class="v" data-stat="filo.bisiklet">299</div><div class="l" lang="en">bikes in the Samsun fleet</div><div class="l" lang="tr">bisiklet, Samsun filosu</div></div>
+    <div class="metric"><div class="v"><span lang="tr">%</span><span data-stat="filo.sahadaYuzde" data-d="0">98</span><span lang="en">%</span></div><div class="l" lang="en">of the fleet in the field</div><div class="l" lang="tr">filo sahada</div><div class="s" lang="en"><span data-stat="filo.sahada">294</span> of <span data-stat="filo.toplam">299</span>, dashboard snapshot</div><div class="s" lang="tr"><span data-stat="filo.toplam">299</span> araçtan <span data-stat="filo.sahada">294</span>, pano anlık görüntüsü</div></div>
+    <div class="metric"><div class="v" data-stat="filo.bolge">55</div><div class="l" lang="en">geofenced zones</div><div class="l" lang="tr">geofence bölgesi</div><div class="s" lang="en">stations, office and restricted areas</div><div class="s" lang="tr">istasyon, ofis ve yasak alanlar</div></div>
+  </div>
+
+  <div class="group-title" lang="en">Maintenance</div><div class="group-title" lang="tr">Bakım</div>
+  <div class="metrics">
+    <div class="metric"><div class="v"><span data-stat="bakim.bakimdanGecenBisiklet">298</span>/<span data-stat="bakim.filo">299</span></div><div class="l" lang="en">bikes went through periodic maintenance</div><div class="l" lang="tr">bisiklet periyodik bakımdan geçti</div><div class="s" lang="en">tiered periodic maintenance</div><div class="s" lang="tr">kademeli periyodik bakım</div></div>
+    <div class="metric"><div class="v" data-stat="bakim.periyodikKayit">984</div><div class="l" lang="en">maintenance records</div><div class="l" lang="tr">bakım kaydı</div></div>
+    <div class="metric"><div class="v" data-stat="bakim.bataryaKontrol">344</div><div class="l" lang="en">batteries checked</div><div class="l" lang="tr">batarya kontrolü</div></div>
+  </div>
+
+  <div class="group-title" lang="en">Regional repair centre, one technician</div><div class="group-title" lang="tr">Bölge onarım merkezi, tek teknisyen</div>
+  <div class="metrics">
+    <div class="metric hl"><div class="v" data-stat="onarimMerkezi.kartOnarimi">1,378</div><div class="l" lang="en">control-card repairs</div><div class="l" lang="tr">kontrol kartı onarımı</div><div class="s" lang="en">for <span data-stat="onarimMerkezi.ilSayisi">8</span> provinces</div><div class="s" lang="tr"><span data-stat="onarimMerkezi.ilSayisi">8</span> il için</div></div>
+    <div class="metric"><div class="v" data-stat="onarimMerkezi.scooter">525</div><div class="l" lang="en">scooters serviced</div><div class="l" lang="tr">scooter servise alındı</div></div>
+    <div class="metric"><div class="v"><span lang="tr">%</span><span data-stat="onarimMerkezi.onarildiYuzde" data-d="0">99</span><span lang="en">%</span></div><div class="l" lang="en">returned repaired</div><div class="l" lang="tr">onarılarak döndü</div></div>
+    <div class="metric"><div class="v"><span data-stat="onarimMerkezi.medyanAylik.0.medyan">13</span> &rarr; <span data-stat="medyanMin">3</span></div><div class="l" lang="en">median repair time, days</div><div class="l" lang="tr">medyan onarım süresi, gün</div><div class="s" lang="en">first month vs. best month; see chart below</div><div class="s" lang="tr">ilk ay ve en iyi ay; aşağıdaki grafiğe bakın</div></div>
+  </div>
+
+  <div class="group-title" lang="en">Scale</div><div class="group-title" lang="tr">Ölçek</div>
+  <div class="metrics">
+    <div class="metric"><div class="v" data-stat="kullanim.ilSayisi">7</div><div class="l" lang="en">provinces used the app</div><div class="l" lang="tr">ilde kullanıldı</div></div>
+    <div class="metric"><div class="v" data-stat="kullanim.islem">9,290</div><div class="l" lang="en">logged operations</div><div class="l" lang="tr">kayıtlı işlem</div></div>
+    <div class="metric"><div class="v"><span data-stat="kullanim.km" data-d="0">4,234</span> km</div><div class="l" lang="en">of driving data</div><div class="l" lang="tr">sürüş verisi</div></div>
+    <div class="metric"><div class="v" data-stat="kullanim.istasyonZiyareti">2,894</div><div class="l" lang="en">station visits detected</div><div class="l" lang="tr">istasyon ziyareti</div></div>
+    <div class="metric"><div class="v" data-stat="kullanim.uyari">4,224</div><div class="l" lang="en">automatic alerts</div><div class="l" lang="tr">otomatik uyarı</div></div>
+    <div class="metric"><div class="v" data-stat="kullanim.ekip">5</div><div class="l" lang="en">person team, 24/7</div><div class="l" lang="tr">kişilik ekip, 7/24</div></div>
+  </div>
+
+  <div class="charts">
+    <div class="chartbox"><h3 lang="en">Median repair time by intake month</h3><h3 lang="tr">Giriş ayına göre medyan onarım süresi</h3><div class="s" lang="en">Days from intake to return, regional repair centre</div><div class="s" lang="tr">Girişten iadeye gün, bölge onarım merkezi</div><div class="c"><canvas id="chMedian" aria-label="median repair days"></canvas></div></div>
+    <div class="chartbox"><h3 lang="en">Logged operations per month</h3><h3 lang="tr">Aylık kayıtlı işlem</h3><div class="s" lang="en">Adds, edits and deletes written by the app</div><div class="s" lang="tr">Uygulamanın yazdığı ekleme, düzenleme ve silmeler</div><div class="c"><canvas id="chOps" aria-label="operations per month"></canvas></div></div>
+  </div>
+</div></section>
+
+<section id="demo"><div class="wrap">
+  <div class="demo-cta">
+    <div><h3 lang="en">Walk through the app</h3><h3 lang="tr">Uygulamayı gezin</h3>
+      <p lang="en">Dashboard, depot records, repair centre, shift roster, handovers, tasks, station map, GPS routes, stock and alerts, with real data. Nothing is saved.</p>
+      <p lang="tr">Pano, depo kayıtları, onarım merkezi, vardiya çizelgesi, araç teslimleri, görevler, istasyon haritası, GPS rotaları, stok ve bildirimler, gerçek veriyle. Hiçbir şey kaydedilmez.</p></div>
+    <a class="btn" href="app.html"><span lang="en">Open the demo</span><span lang="tr">Demoyu aç</span></a>
+  </div>
+</div></section>
+
+<section id="timeline"><div class="wrap">
+  <h2 lang="en">Timeline</h2><h2 lang="tr">Zaman çizelgesi</h2>
+  <ul class="timeline" style="margin-top:18px">
+    <li><div class="d">2025-05</div><div class="tt" lang="en">Start as Samsun Provincial Manager, first maintenance records</div><div class="tt" lang="tr">Samsun İl Yöneticisi olarak başlangıç, ilk bakım kayıtları</div></li>
+    <li><div class="d">2025-10 – 2026-01</div><div class="tt" lang="en">Full fleet periodic maintenance, inventory counts, notifications</div><div class="tt" lang="tr">Tüm filoda periyodik bakım, envanter sayımları, bildirimler</div></li>
+    <li><div class="d">2026-02</div><div class="tt" lang="en">Regional repair centre: service intake and control-card repair for other provinces</div><div class="tt" lang="tr">Bölge onarım merkezi: diğer iller için servis girişi ve kontrol kartı onarımı</div></li>
+    <li><div class="d">2026-06</div><div class="tt" lang="en">Station geofences and automatic visit detection</div><div class="tt" lang="tr">İstasyon geofence'leri ve otomatik ziyaret tespiti</div></li>
+    <li><div class="d">2026-09</div><div class="tt" lang="en">Task assignment, shift start tracking and delay report</div><div class="tt" lang="tr">Görev atama, vardiya başlangıç takibi ve gecikme raporu</div></li>
+    <li><div class="d">2026-10</div><div class="tt" lang="en">Vehicle handover with photos, GPS driving sessions and driver performance</div><div class="tt" lang="tr">Fotoğraflı araç teslimi, GPS sürüş oturumları ve sürücü performansı</div></li>
+    <li><div class="d">2026-11</div><div class="tt" lang="en">Handover to the company's own platform</div><div class="tt" lang="tr">Şirketin kendi platformuna geçiş</div></li>
+  </ul>
+  <div class="callout" style="margin-top:8px">
+    <p lang="en">When Tazı moved operations to its own company-wide platform, the app had done its job: it carried the province and the repair centre until then, and I managed the migration of the processes and the data myself.</p>
+    <p lang="tr">Tazı operasyonu şirket genelindeki kendi platformuna taşıdığında uygulama görevini tamamlamıştı: ili ve onarım merkezini o güne kadar taşıdı; süreçlerin ve verinin geçişini ben yönettim.</p>
+  </div>
+</div></section>
+
+<section id="tech"><div class="wrap">
+  <h2 lang="en">Technology</h2><h2 lang="tr">Teknoloji</h2>
+  <div class="tags" style="margin:16px 0 22px">
+    <span class="tag">Kotlin</span><span class="tag">Android (Material, WorkManager, foreground services)</span><span class="tag">Fused location + accelerometer</span><span class="tag">QR / barcode scanning</span><span class="tag">Google Sheets</span><span class="tag">Apps Script (REST endpoints)</span><span class="tag">Google Drive (photos)</span><span class="tag">Offline cache and sync</span><span class="tag" lang="en">AI-assisted development</span><span class="tag" lang="tr">Yapay zekâ destekli geliştirme</span>
+  </div>
+  <div class="group-title" lang="en">Sheet modules behind the app (selection)</div><div class="group-title" lang="tr">Uygulamanın arkasındaki tablo modülleri (seçme)</div>
+  <ul class="modules">
+    <li>Dashboard</li><li>Depo</li><li>Personeller</li><li>Görev Atamaları</li><li>Sayımlar</li><li>Vardiyalar</li><li>VardiyaGerceklesme</li><li>GecikmeRaporu</li><li>AracTeslim</li><li>AracRotaGecmis</li><li>AracDinamik</li><li>AracKonum</li><li>Scooter Stok Envanter</li><li>Bisiklet Stok Envanter</li><li>Servis Kayıtları</li><li>Parça Onarımı</li><li>İstasyonlar</li><li>İstasyon Ziyaretleri</li><li>Notifications</li><li>ActivityLogs</li><li>ChangeLog</li><li>SystemLogs</li>
+  </ul>
+</div></section>
+
+<section id="privacy"><div class="wrap">
+  <h2 lang="en">About the data</h2><h2 lang="tr">Veri hakkında</h2>
+  <p class="intro" lang="en">The demo uses the real records, anonymised before publishing: people are replaced by consistent numbers (Personel 1, 2, ...), and passwords, phone numbers, vehicle plates, device ids, photo links, URLs and zones around staff homes are removed. GPS routes are limited to three sample shifts, thinned, with the first and last 300 m of each session cut. An automated audit checks every published file against the original values.</p>
+  <p class="intro" lang="tr">Demo gerçek kayıtları kullanır; yayından önce anonimleştirildi: kişiler tutarlı numaralarla (Personel 1, 2, ...) değiştirildi; şifre, telefon, araç plakası, cihaz kimliği, fotoğraf bağlantısı, URL ve personel evlerinin çevresindeki bölgeler çıkarıldı. GPS rotaları üç örnek vardiyayla sınırlı, seyreltilmiş ve her oturumun ilk ve son 300 m'si kesilmiştir. Otomatik bir denetim yayımlanan her dosyayı özgün değerlere karşı tarar.</p>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <span lang="en">Tazı Yenileme Merkezi · personal project, built while working at Tazı. Map data &copy; OpenStreetMap contributors.</span>
+  <span lang="tr">Tazı Yenileme Merkezi · Tazı'da çalışırken geliştirilmiş kişisel proje. Harita verisi &copy; OpenStreetMap katkıcıları.</span>
+</div></footer>
+
+<script src="https://unpkg.com/chart.js@4.4.1/dist/chart.umd.js"></script>
+<script src="assets/site.js"></script>
+</body>
+</html>

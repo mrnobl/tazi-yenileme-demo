@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tazı Yenileme Merkezi demo</title>
+<meta name="description" content="Read-only web demo of the Tazı Yenileme Merkezi Android field app, with real anonymised operating data.">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<link rel="stylesheet" href="assets/theme.css">
+<link rel="stylesheet" href="assets/app.css">
+<script>try{var t=localStorage.getItem("tazi-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+</head>
+<body>
+<div class="stage">
+  <aside class="side">
+    <a class="back" href="index.html"><span id="backIc"></span><span id="backTxt">Tanıtım sayfası</span></a>
+    <img class="logo-mark" src="assets/icon.svg" alt="" style="margin-top:22px">
+    <h1 id="sideTitle">Uygulamanın web demosu</h1>
+    <p id="sideText"></p>
+    <ul id="sideNav"></ul>
+    <p class="note" id="sideNote"></p>
+  </aside>
+  <div class="phone">
+    <div class="screen">
+      <header class="topbar">
+        <button class="iconbtn" id="menuBtn" aria-label="Menu"></button>
+        <div class="titles"><div class="t1" id="title">Genel Durum</div><div class="t2" id="appName">Tazı Yenileme Merkezi</div></div>
+        <button class="lang" id="langBtn" aria-label="Language">EN</button>
+        <button class="iconbtn" id="themeBtn" aria-label="Theme"></button>
+        <span class="avatar" title="Personel 1">P1</span>
+      </header>
+      <div class="demo-banner" id="demoTxt"></div>
+      <main id="view" tabindex="-1"></main>
+      <button class="fab" id="fab" aria-label="Yeni kayıt"></button>
+      <div class="toast" id="toast" role="status" aria-live="polite"></div>
+      <div class="scrim"></div>
+      <aside class="drawer" aria-label="Menu">
+        <div class="drawer-head"><span class="avatar">P1</span><div class="n" id="drawerName">Tazı Yenileme Merkezi</div><div class="r">Personel 1 · Admin · Samsun</div></div>
+        <nav id="drawerNav"></nav>
+      </aside>
+    </div>
+  </div>
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="https://unpkg.com/chart.js@4.4.1/dist/chart.umd.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

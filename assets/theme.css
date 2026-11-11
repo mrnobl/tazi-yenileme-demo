@@ -1,0 +1,81 @@
+/* Shared tokens — colours taken from the Android app (res/values/colors.xml) */
+:root {
+  --brand: #E9A825;
+  --brand-light: #F5C04A;
+  --brand-soft: #FFF8E1;
+  --brand-dark: #B87F0F;
+  --on-brand: #1A1A1A;
+  --ink: #1A1A1A;
+  --ink-2: #555555;
+  --ink-3: #8A8A8A;
+  --bg: #FFFFFF;
+  --bg-2: #FAFAFA;
+  --surface: #FFFFFF;
+  --surface-2: #F5F5F5;
+  --surface-3: #EEEEEE;
+  --line: #E5E5E5;
+  --line-2: #CCCCCC;
+  --ok: #2E7D32;
+  --ok-bg: #E8F5E9;
+  --warn: #9A6A00;
+  --warn-bg: #FFF8E1;
+  --err: #C62828;
+  --err-bg: #FFEBEE;
+  --info: #1565C0;
+  --info-bg: #E3F2FD;
+  --shadow: 0 1px 2px rgba(0,0,0,.06), 0 4px 14px rgba(0,0,0,.06);
+  --radius: 16px;
+  --radius-s: 10px;
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --brand-soft: #2E2510;
+    --brand-dark: #F5C04A;
+    --ink: #F1F1F1;
+    --ink-2: #BDBDBD;
+    --ink-3: #8C8C8C;
+    --bg: #121212;
+    --bg-2: #171717;
+    --surface: #1E1E1E;
+    --surface-2: #252525;
+    --surface-3: #2E2E2E;
+    --line: #333333;
+    --line-2: #444444;
+    --ok: #81C784; --ok-bg: #1B2E1C;
+    --warn: #F5C04A; --warn-bg: #2E2510;
+    --err: #EF9A9A; --err-bg: #3A1D1D;
+    --info: #90CAF9; --info-bg: #15283B;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 4px 14px rgba(0,0,0,.3);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --brand-soft: #2E2510;
+  --brand-dark: #F5C04A;
+  --ink: #F1F1F1;
+  --ink-2: #BDBDBD;
+  --ink-3: #8C8C8C;
+  --bg: #121212;
+  --bg-2: #171717;
+  --surface: #1E1E1E;
+  --surface-2: #252525;
+  --surface-3: #2E2E2E;
+  --line: #333333;
+  --line-2: #444444;
+  --ok: #81C784; --ok-bg: #1B2E1C;
+  --warn: #F5C04A; --warn-bg: #2E2510;
+  --err: #EF9A9A; --err-bg: #3A1D1D;
+  --info: #90CAF9; --info-bg: #15283B;
+  --shadow: 0 1px 2px rgba(0,0,0,.4), 0 4px 14px rgba(0,0,0,.3);
+  color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 15px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+.icon { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.tnum { font-variant-numeric: tabular-nums; }
